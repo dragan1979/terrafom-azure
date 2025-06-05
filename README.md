@@ -8,7 +8,7 @@ Balancers, Application Gateways, and Storage Accounts.
 
 **Table of Contents**
 
-- [Prerequisites](#Prerequisites)
+- [Prerequisites](#prerequisites)
 - [Terraform and Provider Requirements](#terraform-and-provider-requirements)
 - [Modules Overview](#modules-overview)
   - [Azure Resource Group Module](#azure-resource-group-module)
@@ -23,7 +23,7 @@ Balancers, Application Gateways, and Storage Accounts.
 - [Usage](#usage)
 - [Important Notes](#important-notes)
 
-**Prerequisites**
+## Prerequisites
 
 Before you can use these Terraform configurations, ensure you have the
 following installed and configured:
@@ -46,7 +46,7 @@ following installed and configured:
   Gateway with SSL, ensure you have your .pfx certificate file and its
   password ready at the specified path (./cert/1.pfx in the example).
 
-**Terraform and Provider Requirements**
+## Terraform and Provider Requirements
 
 This configuration has the following Terraform and provider version
 requirements:
@@ -84,14 +84,14 @@ version = \"\~\> 2.0\"
  }
 }
 ```
-**Modules Overview**
+## Modules Overview
 
 This setup utilizes several custom Terraform modules, each responsible
 for deploying a specific Azure resource or set of resources. The source
 paths indicate that these modules are expected to be located in a parent
 directory named ../ relative to where this main configuration resides.
 
-**Azure Resource Group Module**
+## Azure Resource Group Module
 
 This module creates Azure Resource Groups to logically organize your
 resources.
@@ -110,7 +110,7 @@ resource_group_tag = \"Production\"
 
 }
 ```
-**Azure Key Vault Module**
+## Azure Key Vault Module
 
 This module creates an Azure Key Vault and configures it with necessary
 settings, including access policies.
@@ -140,7 +140,7 @@ network_acl = \[\"82.117.216.178/32\"\]
 
 }
 ```
-**Azure Virtual Network Module**
+## Azure Virtual Network Module
 
 This module creates an Azure Virtual Network with specified CIDR blocks
 and subnets, allowing for flexible network segmentation. Two VNETs are
@@ -173,14 +173,14 @@ enable_gateway_subnet = true
 \# \... other subnet configurations (e.g., dmz, vdi, infrastructure)
 
 }
-
-**Azure VNET Peering Module**
+```
+## Azure VNET Peering Module
 
 This module sets up peering between two Azure Virtual Networks, enabling
 communication across them while maintaining isolation.
 
 Example Usage:
-
+```
 module \"vnet_peering\" {
 
 source = \"./../peering\"
@@ -199,7 +199,7 @@ vnet2_rg_name = module.rg2.resource_group_name
 
 }
 ```
-**Azure Availability Set Module**
+## Azure Availability Set Module
 
 This module creates an Azure Availability Set to ensure high
 availability for your virtual machines by spreading them across
@@ -224,7 +224,7 @@ availability_set_fault_domain_count = 2
 
 }
 ```
-**Azure Virtual Machine Module**
+## Azure Virtual Machine Module
 
 This module creates Azure Virtual Machines with specified
 configurations. It supports both Windows (azure_vm1) and Linux
@@ -283,7 +283,7 @@ module.availability_set1\]
 ```
 }
 
-**Azure Load Balancer Module**
+## Azure Load Balancer Module
 
 This module creates an Azure Load Balancer with configurable rules,
 health probes, and backend pools to distribute traffic to your virtual
@@ -347,7 +347,7 @@ tags_global = { Project = \"MyWebApp\" }
 
 }
 ```
-**Azure Application Gateway Module**
+## Azure Application Gateway Module
 
 This module creates an Azure Application Gateway with WAF_v2
 configuration, enabling advanced traffic management and security
@@ -440,7 +440,7 @@ match_variables = \[{ variable_name = \"RemoteAddr\" }\], operator =
 
 }
 ```
-**Azure Storage Account Module**
+## Azure Storage Account Module
 
 This module creates an Azure Storage Account with specified
 configurations, including replication type, access tier, network rules,
@@ -500,7 +500,7 @@ queues = \[{ name = \"message-queue\" }\]
 tables = \[{ name = \"userdata\" }\]
 }
 ```
-**Usage**
+## Usage
 
 1.  Clone the Repository:
 
@@ -527,7 +527,7 @@ destroy. Review it carefully to understand the changes.
 
 Type yes when prompted to confirm the deployment.
 
-**Important Notes**
+## Important Notes
 
 - Variable Management: This configuration uses
   var.resource_group_location, var.environment_name, var.vm_admin,
