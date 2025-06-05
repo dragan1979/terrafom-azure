@@ -8,51 +8,20 @@ Balancers, Application Gateways, and Storage Accounts.
 
 **Table of Contents**
 
-- [Azure Infrastructure with
-  Terraform](https://gemini.google.com/app/1c160e0e952b04ab#azure-infrastructure-with-terraform)
-
-- [Table of
-  Contents](https://gemini.google.com/app/1c160e0e952b04ab#table-of-contents)
-
-- [Prerequisites](https://gemini.google.com/app/1c160e0e952b04ab#prerequisites)
-
-- [Terraform and Provider
-  Requirements](https://gemini.google.com/app/1c160e0e952b04ab#terraform-and-provider-requirements)
-
-- [Modules
-  Overview](https://gemini.google.com/app/1c160e0e952b04ab#modules-overview)
-
-  - [Azure Resource Group
-    Module](https://gemini.google.com/app/1c160e0e952b04ab#azure-resource-group-module)
-
-  - [Azure Key Vault
-    Module](https://gemini.google.com/app/1c160e0e952b04ab#azure-key-vault-module)
-
-  - [Azure Virtual Network
-    Module](https://gemini.google.com/app/1c160e0e952b04ab#azure-virtual-network-module)
-
-  - [Azure VNET Peering
-    Module](https://gemini.google.com/app/1c160e0e952b04ab#azure-vnet-peering-module)
-
-  - [Azure Availability Set
-    Module](https://gemini.google.com/app/1c160e0e952b04ab#azure-availability-set-module)
-
-  - [Azure Virtual Machine
-    Module](https://gemini.google.com/app/1c160e0e952b04ab#azure-virtual-machine-module)
-
-  - [Azure Load Balancer
-    Module](https://gemini.google.com/app/1c160e0e952b04ab#azure-load-balancer-module)
-
-  - [Azure Application Gateway
-    Module](https://gemini.google.com/app/1c160e0e952b04ab#azure-application-gateway-module)
-
-  - [Azure Storage Account
-    Module](https://gemini.google.com/app/1c160e0e952b04ab#azure-storage-account-module)
-
-- [Usage](https://gemini.google.com/app/1c160e0e952b04ab#usage)
-
-- [Important
-  Notes](https://gemini.google.com/app/1c160e0e952b04ab#important-notes)
+- [Prerequisites](#Prerequisites)
+- [Terraform and Provider Requirements](#terraform-and-provider-requirements)
+- [Modules Overview](#modules-overview)
+  - [Azure Resource Group Module](#azure-resource-group-module)
+  - [Azure Key Vault Module](#azure-key-vault-module)
+  - [Azure Virtual Network Module](#azure-virtual-network-module)
+  - [Azure VNET Peering Module](#azure-vnet-peering-module)
+  - [Azure Availability Set Module](#azure-availability-set-module)
+  - [Azure Virtual Machine Module](#azure-virtual-machine-module)
+  - [Azure Load Balancer Module](#azure-load-balancer-module)
+  - [Azure Application Gateway Module](#azure-application-gateway-module)
+  - [Azure Storage Account Module](#azure-storage-account-module)
+- [Usage](#usage)
+- [Important Notes](#important-notes)
 
 **Prerequisites**
 
