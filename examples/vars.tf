@@ -12,3 +12,11 @@ variable "environment_name" {
  default = "test"
  description = "Environmnet name"
 }
+variable "tags_global" {
+  default = {}
+  description = "global tag"
+}
+
+variable "tags_module" {
+  default = {}
+}
